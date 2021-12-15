@@ -1,0 +1,8 @@
+marshmallow
+pytest
+uvicorn 
+fastapi 
+pydantic
+loguru
+pymongo
+numpy

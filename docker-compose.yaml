@@ -1,0 +1,34 @@
+version: '3'
+
+volumes:
+  vkapi:
+
+services:
+
+  mongo:
+    image: mongo
+    container_name: kursach_mongo
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - /opt/db/kursach_mongo:/data/kursach_mongo
+    networks:
+      - kursach_network
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: kursach
+    container_name: kursach_api
+    restart: always
+    tty: True
+    working_dir: /
+    ports: 
+        - "8000:80"
+    networks:
+      - kursach_network
+
+networks:
+  kursach_network:
+    driver: bridge
