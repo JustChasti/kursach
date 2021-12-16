@@ -31,7 +31,6 @@ def insert_user(data):
                 logger.exception(e)
                 return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST)
             user = user_collection.insert_one(i)
-            user = user_collection.insert_one(i)
     return {"message": "succes"}
 
 
