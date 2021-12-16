@@ -12,7 +12,6 @@ logger.add("test.log", rotation="100 MB")
 
 
 @app.post("/imports")
-# добавить проверку корректности данных и вернуть 400 если они некорректные
 async def imports(request: Request):
     try:
         response = insert_user(await request.json())
@@ -33,7 +32,6 @@ async def get_imports(import_id: int):
 
 
 @app.patch("/imports/{import_id}/citizens/{citizen_id}")
-# проверить данные, если не ок, то 400, если челобаса нет, то 404
 async def change_person(import_id: int, citizen_id: int, request: Request):
     response = update_user(import_id, citizen_id, await request.json())
     return response
