@@ -67,3 +67,4 @@ tests/__pycache__/generator.cpython-39.pyc
 tests/__pycache__/test_correct.cpython-39-pytest-6.2.5.pyc
 tests/__pycache__/test_main.cpython-39-pytest-6.2.5.pyc
 tests/__pycache__/test_percentel.cpython-39-pytest-6.2.5.pyc
+__pycache__/test_server.cpython-39-pytest-6.2.5.pyc

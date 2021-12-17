@@ -33,8 +33,12 @@ async def get_imports(import_id: int):
 
 @app.patch("/imports/{import_id}/citizens/{citizen_id}")
 async def change_person(import_id: int, citizen_id: int, request: Request):
-    response = update_user(import_id, citizen_id, await request.json())
-    return response
+    try:
+        response = update_user(import_id, citizen_id, await request.json())
+        return response
+    except Exception as e:
+        logger.exception(e)
+        return {"message": "db insert error"}
 
 
 @app.get("/imports/{import_id}/citizens/birthdays")

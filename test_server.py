@@ -39,5 +39,5 @@ def test_percentile():
 
 # test_imports()
 test_import_id()
-# test_birthdays()
-# test_percentile()
+test_birthdays()
+test_percentile()

@@ -5,7 +5,7 @@ from generator import generate_dataset
 
 
 url = 'http://127.0.0.1:8000/'
-id = 3
+id = 1
 
 
 def test_imports():
